@@ -1,0 +1,86 @@
+{% include 'staffheader.html' %}
+<!-- offset search area start -->
+<div class="offset-search">
+    <form action="#">
+        <input type="text" name="search" placeholder="Sarch here...">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</div>
+<!-- offset search area end -->
+<!-- body overlay area start -->
+<div class="body_overlay"></div>
+<!-- body overlay area end -->
+<!-- hero area start -->
+<div class="hero-area has-color" style="height: 200px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <div class="hero-content">
+                    <!-- <h3>Admission'20</h3> -->
+                    <h1 class="mb-5"><span class="primary-color">Manage Student</span><b class="line-break"></b></h1>
+                    <!-- <p class="text-white-50">Find Your Preferred Courses & Improve Your Skills</p> -->
+                    <form action="#">
+                        <div class="form-input mt-5">
+                           <!--  <input type="text" name="search" required placeholder="Enter your keyword...">
+                            <button class="btn btn-primary btn-round" type="submit">Seacrh</button> -->
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- hero area end -->
+<center>
+        <h2>View Student</h2>
+        <form method="post">
+        <table class="table" style="width:500px;color:white;">
+            <tr>
+                <td>
+                    <select name="coursee" class="form-control" style="width: 250px;border-radius: 10px;">
+                    {% for row in data['crss'] %}
+                        <option value="{{ row['course_id'] }}" style="color: black">{{row['course'] }}</option>
+                    {% endfor %}    
+                    </select>
+                </td>
+                <td><input type="submit" class="btn btn-success" name="search" value="search"></td>
+            </tr>
+        </table>
+        </form>
+        <table class="table" style="width:500px;">
+        <tr>
+            <th>Course</th>
+            <th>Semester</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Place</th>
+            <th>Email</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        {% for row in data['student'] %}
+        <tr>
+            <td>{{row['course']}}</td>
+            <td>{{row['semester']}}</td>
+            <td>{{row['first_name']}}</td>
+            <td>{{row['last_name']}}</td>
+            <td>{{row['place']}}</td>
+            <td>{{row['email']}}</td>
+            <!-- <td><a href="staffaddattendance?sid={{row['student_id']}}&id={{row['login_id']}}" class="btn btn-success">add attendance</a></td> -->
+            <td><a href="?action=Absent&sid={{row['student_id']}}" class="btn btn-primary">Absent</a></td>
+            <td><a href="?action=Present&sid={{row['student_id']}}" class="btn btn-danger">present</a></td>
+
+        </tr>
+        {% endfor %}
+        </table>
+</center>
+
+ <style type="text/css">
+    td,th,tr{
+        border: none!important;
+    }
+  </style>
+{% include 'footer.html' %}

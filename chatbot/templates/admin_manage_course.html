@@ -1,0 +1,109 @@
+{% include 'adminheader.html' %}
+
+
+<!-- offset search area start -->
+<div class="offset-search">
+    <form action="#">
+        <input type="text" name="search" placeholder="Sarch here...">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</div>
+<!-- offset search area end -->
+<!-- body overlay area start -->
+<div class="body_overlay"></div>
+<!-- body overlay area end -->
+<!-- hero area start -->
+<div class="hero-area has-color" style="height: 200px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <div class="hero-content">
+                    <!-- <h3>Admission'20</h3> -->
+                    <h1 class="mb-5"><span class="primary-color">Manage Course</span><b class="line-break"></b></h1>
+                    <!-- <p class="text-white-50">Find Your Preferred Courses & Improve Your Skills</p> -->
+                    <form action="#">
+                        <div class="form-input mt-5">
+                           <!--  <input type="text" name="search" required placeholder="Enter your keyword...">
+                            <button class="btn btn-primary btn-round" type="submit">Seacrh</button> -->
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- hero area end -->
+      <style>
+    table {
+
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 20);
+    }
+    .btn-success {
+        background-color: #28a745;
+        color: #fff;
+    }
+</style>
+<style>
+	th,td{
+		height: 30px;
+		color: black;
+		padding: 15px;
+	}
+</style>
+<center>
+	{% if data['update_course'] %}
+
+		<form method="post">
+			<table class="table" style="width:500px;">
+			<tr>
+				<th>Course</th>
+				<td><input type="text" name="course" required="" value="{{data['update_course'][0]['course']}}" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" name="update" value="Update" class="btn btn-primary"></td>
+			</tr>
+		</form>
+	</table>
+	{% else %}	
+	<br><br><br>
+
+	<form method="post">
+	<table class="table" style="width:500px;">
+		<tr>
+			<th>Course</th>
+			<td><input type="text" name="course_name" required="" class="form-control" style="width: 250px;height: 38px;border-radius: 10px;"></td>
+		</tr>
+		<tr>
+			<td align="center" colspan="2">
+				<input type="submit" name="submit" value="SUBMIT" class="btn btn-primary">
+			</td>
+		</tr>
+	</table>
+
+	<table class="table" style="width:500px;">
+		
+		<tr>
+			<th>Course</th>
+			<th></th>
+			<th></th>
+		</tr>
+		{% for row in data['course'] %}
+		<tr>
+			<td>{{ row['course'] }}</td>
+			<td><a href="?action=update&cid={{ row['course_id'] }}" class="btn btn-success">Update</a></td>
+			<td><a href="?action=delete&cid={{ row['course_id'] }}" class="btn btn-danger">Delete</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+	{% endif %}
+</form>
+</center>
+<style type="text/css">
+  	td,th,tr{
+  		border: none!important;
+  	}
+  </style>
+{% include 'footer.html' %}

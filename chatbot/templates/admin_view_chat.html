@@ -1,0 +1,87 @@
+{% include 'adminheader.html' %}
+
+<!-- offset search area start -->
+<div class="offset-search">
+    <form action="#">
+        <input type="text" name="search" placeholder="Sarch here...">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</div>
+<!-- offset search area end -->
+<!-- body overlay area start -->
+<div class="body_overlay"></div>
+<!-- body overlay area end -->
+<!-- hero area start -->
+<div class="hero-area has-color" style="height: 200px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <div class="hero-content">
+                    <!-- <h3>Admission'20</h3> -->
+                    <h1 class="mb-5"><span class="primary-color">VIEW CHAT</span><b class="line-break"></b></h1>
+                    <!-- <p class="text-white-50">Find Your Preferred Courses & Improve Your Skills</p> -->
+                    <form action="#">
+                        <div class="form-input mt-5">
+                           <!--  <input type="text" name="search" required placeholder="Enter your keyword...">
+                            <button class="btn btn-primary btn-round" type="submit">Seacrh</button> -->
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- hero area end -->
+
+<center>
+{% if data['c_view'] %}
+	<form method="post">
+		<h1>Chat Box</h1>
+	<div style="overflow-y: scroll; width: 700px; height: 500px;" >
+	<table class="table" class="table" style="width:600px;">
+
+
+	{% for row in data['c_view'] %}
+		{%if row['sender_id']==0 %}
+				<tr>
+					<div style="color: black;margin-right: 20px;" align="right">{{row['message']}}</div>
+				</tr>
+		{% else %}
+				<tr>
+					<div style="color: black;" align="left" >{{row['message']}} </div>
+				</tr>
+		{% endif %}
+{% endfor %}
+
+	</table>
+<!-- 	</div>
+	<table>
+	<tr>
+		<th><input type="text" class="form-control" name="message" required></th>
+		<td><input class="btn btn-outline-info" type="submit" name="submit" value="SEND"></td>
+		</tr>
+	</table>
+	</form><br><br> -->
+{% else %}
+<h1></h1>
+<table class="table" style="width:600px;">
+	<tr>
+		<th>Sl.No</th>
+		<th>Student Name</th>
+		<th>Course</th>
+		<th>Semester</th>
+	</tr>
+	{% for i in data['view'] %}
+	<tr>
+		<td>{{loop.index}}</td>
+		<td>{{i['first_name']}} {{i['last_name']}}</td>
+		<td>{{i['course']}}</td>
+		<td>{{i['semester']}}</td>
+		<td><a class="btn btn-success" href="?action=chat&lid={{i['login_id']}}">CHAT</a></td>
+	</tr>
+	{% endfor %}
+</table>
+{% endif %}
+</center>
+{% include 'footer.html' %}
