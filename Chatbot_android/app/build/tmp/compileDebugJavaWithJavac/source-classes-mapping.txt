@@ -1,0 +1,54 @@
+com/example/chatbot/Custimage.java
+ com.example.chatbot.Custimage
+com/example/chatbot/JsonReq.java
+ com.example.chatbot.JsonReq
+com/example/chatbot/studentviewtimetable.java
+ com.example.chatbot.studentviewtimetable
+com/example/chatbot/student_view_attentence.java
+ com.example.chatbot.student_view_attentence
+ com.example.chatbot.student_view_attentence$1
+ com.example.chatbot.student_view_attentence$2
+ com.example.chatbot.student_view_attentence$3
+com/example/chatbot/sendcomplaint.java
+ com.example.chatbot.sendcomplaint
+ com.example.chatbot.sendcomplaint$1
+com/example/chatbot/studenthome.java
+ com.example.chatbot.studenthome
+ com.example.chatbot.studenthome$1
+ com.example.chatbot.studenthome$2
+ com.example.chatbot.studenthome$3
+ com.example.chatbot.studenthome$4
+ com.example.chatbot.studenthome$5
+ com.example.chatbot.studenthome$6
+ com.example.chatbot.studenthome$7
+com/example/chatbot/JsonResponse.java
+ com.example.chatbot.JsonResponse
+com/example/chatbot/MainActivity.java
+ com.example.chatbot.MainActivity
+com/example/chatbot/View_attendance.java
+ com.example.chatbot.View_attendance
+com/example/chatbot/Myprofile.java
+ com.example.chatbot.Myprofile
+com/example/chatbot/ChatHere.java
+ com.example.chatbot.ChatHere
+ com.example.chatbot.ChatHere$1
+ com.example.chatbot.ChatHere$2
+ com.example.chatbot.ChatHere$2$1
+com/example/chatbot/Login.java
+ com.example.chatbot.Login
+ com.example.chatbot.Login$1
+com/example/chatbot/VolleyMultipartRequest.java
+ com.example.chatbot.VolleyMultipartRequest
+ com.example.chatbot.VolleyMultipartRequest$DataPart
+com/example/chatbot/Customchat.java
+ com.example.chatbot.Customchat
+com/example/chatbot/student_view_notification.java
+ com.example.chatbot.student_view_notification
+com/example/chatbot/BuildConfig.java
+ com.example.chatbot.BuildConfig
+com/example/chatbot/ipsettings.java
+ com.example.chatbot.ipsettings
+ com.example.chatbot.ipsettings$1
+ com.example.chatbot.ipsettings$2
+com/example/chatbot/studentviewprofile.java
+ com.example.chatbot.studentviewprofile
